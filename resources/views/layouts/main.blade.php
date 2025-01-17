@@ -11,8 +11,7 @@
                   @yield('content')
          
     <!-- END: Content-->
-    @include('partials.widget')
-
+     
     @include('partials.footer')
 
 @endsection
