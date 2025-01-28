@@ -110,6 +110,12 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="nav-item is-shown {{ request()->is('admin/logs*') ? 'active' : '' }}">
+                    <a href="{{route('admin.log.index')}}"><i class="menu-icon tf-icons bx bx-detail"
+                    data-icon="users"></i><span class="menu-title text-truncate" data-i18n="Menu">Logs</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

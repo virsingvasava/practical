@@ -20,6 +20,8 @@ class ServiceController extends Controller
     
     public function index(Request $request)
     {
+        Log::channel('custom_log')->info('This is a custom log message.', ['key' => 'value']);
+
         $serviceArray = $this->serviceRepository->getAll();
         return view('admin.services.index', compact('serviceArray'));
 

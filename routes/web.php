@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\AccountSettingController;
+use App\Http\Controllers\Admin\LogController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -65,6 +66,12 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
         Route::post('/change-password/{id}', [AccountSettingController::class, 'changePassword'])->name('admin.setting.changePassword');
         Route::post('logout', [AccountSettingController::class, 'logout'])->name('admin.settings.logout');
     });
+
+
+    Route::group(['prefix' => 'logs'], function ($router) {
+        Route::get('list', [LogController::class, 'index'])->name('admin.log.index');
+    });
+
 
 });
 
