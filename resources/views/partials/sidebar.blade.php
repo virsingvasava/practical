@@ -78,6 +78,12 @@
                     data-icon="users"></i><span class="menu-title text-truncate" data-i18n="Menu">Services</span>
                     </a>
                 </li>
+                
+                <li class="nav-item is-shown {{ request()->is('admin/teams*') ? 'active' : '' }}">
+                    <a href="{{route('admin.team.index')}}"><i class="menu-icon tf-icons bx bx-detail"
+                    data-icon="users"></i><span class="menu-title text-truncate" data-i18n="Menu">Tournament Teams</span>
+                    </a>
+                </li>
 
                 <li class=" navigation-header text-truncate"><span data-i18n="Config &amp; Settings">Config &amp;
                 Settings</span>

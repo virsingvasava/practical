@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('build/theme/app-assets/vendors/css/extensions/sweetalert2.min.css') }}">
     
 
-    @if (request()->is('admin/users*') || request()->is('admin/services*') ||  request()->is('admin/logs*'))
+    @if (request()->is('admin/users*') || request()->is('admin/services*') ||  request()->is('admin/logs*') ||  request()->is('admin/teams*') )
         <link rel="stylesheet" type="text/css" href="{{ asset('build/theme/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('build/theme/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('build/theme/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css') }}">
@@ -98,7 +98,7 @@
     <script src="{{ asset('build/theme/app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
     <!-- END: Page JS-->
 
-    @if (request()->is('admin/users*') || request()->is('admin/services*') || request()->is('admin/logs*'))
+    @if (request()->is('admin/users*') || request()->is('admin/services*') || request()->is('admin/logs*') || request()->is('admin/teams*'))
     <!-- BEGIN: Page Vendor JS-->
     <script src="{{ asset('build/theme/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('build/theme/app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js') }}"></script>

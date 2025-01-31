@@ -6,6 +6,10 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\AccountSettingController;
 use App\Http\Controllers\Admin\LogController;
+use App\Http\Controllers\Admin\TournamentController;
+use App\Http\Controllers\Admin\TeamSelectionController;
+
+
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -72,6 +76,22 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
         Route::get('list', [LogController::class, 'index'])->name('admin.log.index');
     });
 
+    Route::group(['prefix' => 'teams'], function ($router) {
+        Route::get('/', [TeamSelectionController::class, 'index'])->name('admin.team.index');
+        Route::get('/view/{id}', [TeamSelectionController::class, 'view'])->name('admin.team.view');
+        Route::post('/update/{id}', [TeamSelectionController::class, 'update'])->name('admin.team.update');
+        Route::get('/edit/{id}',  [TeamSelectionController::class, 'edit'])->name('admin.team.edit');
+        Route::post('/destroy', [TeamSelectionController::class, 'destroy'])->name('admin.team.destroy');
+        Route::get('/step1', [TeamSelectionController::class, 'step1'])->name('admin.team.step1');
+        Route::post('/store', [TeamSelectionController::class, 'storeStep1'])->name('admin.team.storeStep1');
+        Route::get('/step2', [TeamSelectionController::class, 'step2'])->name('admin.team.step2');
+        Route::post('/store-step2', [TeamSelectionController::class, 'storeStep2'])->name('admin.team.storeStep2');
+        Route::get('/step3', [TeamSelectionController::class, 'step3'])->name('admin.team.step3');
+        Route::post('/store-step3', [TeamSelectionController::class, 'storeStep3'])->name('admin.team.storeStep3');
+        Route::get('/step4', [TeamSelectionController::class, 'step4'])->name('admin.team.step4');
+        Route::post('/store-step4', [TeamSelectionController::class, 'storeStep4'])->name('admin.team.storeStep4');
+        Route::get('/step5', [TeamSelectionController::class, 'step5'])->name('admin.team.step5');
+    });
 
 });
 

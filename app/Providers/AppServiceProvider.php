@@ -17,6 +17,10 @@ use App\Repositories\AccountSettingRepository;
 use App\Repositories\Contracts\LogRepositoryInterface;
 use App\Repositories\LogRepository;
 
+use App\Repositories\Contracts\TeamRepositoryInterface;
+use App\Repositories\TeamRepository;
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +32,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(AccountSettingRepositoryInterface::class, AccountSettingRepository::class);
         $this->app->bind(LogRepositoryInterface::class, LogRepository::class);
+        $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
+
 
     }
 
